@@ -36,8 +36,11 @@ def main():
     with open('input.txt') as input_file:
         input_list = input_file.read().split()
         string_1, string_2 = get_one_diff_strings(input_list)
-        common_letters = find_similar_chars(string_1, string_2)
-        print(common_letters)
+        print(
+            f'''The letters that are common between the two box IDs are {
+                find_similar_chars(string_1, string_2)
+            }'''
+        )
 
 if __name__ == '__main__':
     main()

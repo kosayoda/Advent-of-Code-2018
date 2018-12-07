@@ -51,8 +51,11 @@ def get_checksum(input_list):
 def main():
     with open('input.txt') as input_file:
         input_list = input_file.read().split()
-        checksum = get_checksum(input_list)
-    print(checksum)
+        print(
+            f'''The checksum for the list of box IDs is {
+                get_checksum(input_list)
+            }'''
+        )
 
 if __name__ == '__main__':
     main()

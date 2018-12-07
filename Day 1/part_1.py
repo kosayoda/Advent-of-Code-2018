@@ -12,4 +12,8 @@ with open('input.txt') as input_file:
     for frequency_change in input_file.read().splitlines():
         starting_freq += int(frequency_change)
 
-print(starting_freq)
+print(
+    f'''The resulting frequency after all changes have been applied is {
+        starting_freq
+    }'''
+)

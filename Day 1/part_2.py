@@ -21,7 +21,13 @@ def retrieve_repeat(input_list):
             return starting_freq
         seen_freq.add(starting_freq)
 
-with open('input.txt') as input_file:
-    input_list = input_file.read().split()
-    output = retrieve_repeat(input_list)
-    print(output)
+
+def main():
+    with open('input.txt') as input_file:
+        input_list = input_file.read().split()
+        output = retrieve_repeat(input_list)
+        print(output)
+
+
+if __name__ == '__main__':
+    main()

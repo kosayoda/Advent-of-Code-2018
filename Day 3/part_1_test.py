@@ -1,22 +1,22 @@
 import pytest
 from part_1 import Claim, claim_parser, find_overlapped_inches
 
-test_list = [
+list_test = [
     '#1 @ 1,3: 4x4',
     '#2 @ 3,1: 4x4',
     '#3 @ 5,5: 2x2',
 ]
 
-test_claim_string = '#123 @ 3,2: 5x4'
+claim_string_test = '#123 @ 3,2: 5x4'
 
 
-claim_1 = Claim(claim_parser(test_list[0]))
-claim_2 = Claim(claim_parser(test_list[1]))
-claim_3 = Claim(claim_parser(test_list[2]))
+claim_1 = Claim(claim_parser(list_test[0]))
+claim_2 = Claim(claim_parser(list_test[1]))
+claim_3 = Claim(claim_parser(list_test[2]))
 
 
 def test_claim_parser():
-    assert claim_parser(test_claim_string) == (123, 3, 2, 5, 4)
+    assert claim_parser(claim_string_test) == (123, 3, 2, 5, 4)
 
 
 def test_claim():
@@ -40,4 +40,4 @@ def test_claim():
 
 
 def test_find_overlapped_inches():
-    assert find_overlapped_inches(test_list) == 4
+    assert find_overlapped_inches(list_test) == 4

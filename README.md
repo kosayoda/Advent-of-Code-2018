@@ -14,11 +14,5 @@
 |-------|-------|
 | Day 6 | Numpy |
 
-- Notably time-inefficient scripts:
-
-|     Script     |     Time     |
-|----------------|--------------|
-|Day 6 - *Part 1*| 4.23 minutes |
-
 ## License
 This project is licensed under MIT. For more information see the [LICENSE](https://github.com/kosayoda/Advent-of-Code-2018/blob/master/LICENSE) file.

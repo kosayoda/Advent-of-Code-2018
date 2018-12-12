@@ -32,7 +32,7 @@ def initialize_grid(coordinates):
     '''
     x, y = [i[0] for i in coordinates], [i[1] for i in coordinates]
     max_x, max_y = max(x), max(y)
-    grid = np.zeros((max_y + 1, max_x + 1))
+    grid = np.empty((max_y + 1, max_x + 1), dtype=int)
 
     label_gen = count(1)
     for x, y in coordinates:
@@ -49,20 +49,18 @@ def closest_coordinate(grid, coordinate_list):
     '''
     for (row, col), value in np.ndenumerate(grid):
         if value == 0:
+            distance_dict = {}
+            for i in coordinate_list:
+                distance_dict[i] = manhattan((col, row), i)
+            min_dist = min(distance_dict.values())
             winner = [
-                i for i in coordinate_list if (
-                    manhattan((col, row), i) == min(
-                        [manhattan((col, row), i) for i in coordinate_list]
-                    )
-                )
+                key for key, value in distance_dict.items() if value == min_dist
             ]
-            winner_col, winner_row = winner[0]
+
             if len(winner) == 1:
+                winner_col, winner_row = winner[0]
                 grid[row][col] = grid[winner_row][winner_col]
-            else:
-                grid[row][col] = 0
-        else:
-            pass
+
     return grid
 
 
